@@ -3,6 +3,7 @@ import MapView from '../views/MapView.vue'
 import FriendsView from '../views/FriendsView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import LoginView from '../views/LoginView.vue'
+import TestGPSSignal from '../views/TestGPSSignal.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,12 @@ const router = createRouter({
       name: 'profile',
       component: ProfileView,
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/test/gps',
+      name: 'test-gps',
+      component: TestGPSSignal,
+      meta: { requiresAuth: false }
     }
   ]
 })

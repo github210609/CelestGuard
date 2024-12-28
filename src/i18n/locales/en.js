@@ -83,9 +83,17 @@ export default {
     locateMe: 'Locate Me',
     navigate: 'Navigate',
     selectUsers: 'Select Users',
-    locationSuccess: 'Location successful',
-    locationFailed: 'Location failed, please check location permission',
-    loadFailed: 'Map failed to load, please refresh and try again'
+    locationSuccess: 'Location updated',
+    locationFailed: 'Failed to get location',
+    loadFailed: 'Failed to load map',
+    signalExcellent: 'GPS Signal Excellent',
+    signalGood: 'GPS Signal Good',
+    signalFair: 'GPS Signal Fair',
+    signalPoor: 'GPS Signal Poor',
+    signalNone: 'GPS No Signal',
+    locatingTitle: 'Finding Your Location',
+    locatingDesc: 'Getting your position via GPS',
+    locatingTip: 'Please wait a moment...'
   },
   login: {
     title: 'Welcome Back',

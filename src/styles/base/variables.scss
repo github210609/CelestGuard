@@ -1,0 +1,190 @@
+@use "sass:color";
+@use "sass:map";
+
+// SCSS 变量
+// 主题色
+$theme-primary: #5B6BF9 !default;
+$theme-primary-light: color.adjust($theme-primary, $lightness: 10%) !default;
+$theme-primary-dark: color.adjust($theme-primary, $lightness: -10%) !default;
+$theme-secondary: #40A9FF !default;
+$theme-success: #67C23A !default;
+$theme-warning: #E6A23C !default;
+$theme-danger: #F56C6C !default;
+$theme-info: #909399 !default;
+
+// 文本颜色
+$text-primary: #303133 !default;
+$text-regular: #606266 !default;
+$text-secondary: #909399 !default;
+$text-placeholder: #C0C4CC !default;
+
+// 背景颜色
+$bg-primary: #FFFFFF !default;
+$bg-secondary: #F5F7FA !default;
+$bg-tertiary: #EBEEF5 !default;
+
+// 边框
+$border-color: #DCDFE6 !default;
+$border-radius: 8px !default;
+$border-width: 1px !default;
+
+// 阴影
+$shadow-color: #000000 !default;
+$shadow-base: 0 2px 12px rgba($shadow-color, 0.1) !default;
+$shadow-light: 0 2px 8px rgba($shadow-color, 0.08) !default;
+$shadow-heavy: 0 4px 16px rgba($shadow-color, 0.12) !default;
+$shadow-controls: 0 2px 8px rgba($shadow-color, 0.15) !default;
+
+// 动画
+$transition-duration: 0.3s !default;
+$transition-timing: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$transition-base: all $transition-duration $transition-timing !default;
+$transition-colors: color $transition-duration $transition-timing !default;
+$transition-transform: transform $transition-duration $transition-timing !default;
+
+// 字体大小系统
+$font-sizes: (
+  mini: 0.75rem,    // 12px
+  small: 0.875rem,  // 14px
+  base: 1rem,       // 16px
+  medium: 1.125rem, // 18px
+  large: 1.25rem,   // 20px
+  xlarge: 1.5rem    // 24px
+) !default;
+
+$font-size-mini: map.get($font-sizes, "mini") !default;
+$font-size-small: map.get($font-sizes, "small") !default;
+$font-size-base: map.get($font-sizes, "base") !default;
+$font-size-medium: map.get($font-sizes, "medium") !default;
+$font-size-large: map.get($font-sizes, "large") !default;
+$font-size-xlarge: map.get($font-sizes, "xlarge") !default;
+
+// CSS 变量
+:root {
+  // 主题色
+  --theme-primary: #{$theme-primary};
+  --theme-primary-light: #{$theme-primary-light};
+  --theme-primary-dark: #{$theme-primary-dark};
+  --theme-secondary: #{$theme-secondary};
+  --theme-success: #{$theme-success};
+  --theme-warning: #{$theme-warning};
+  --theme-danger: #{$theme-danger};
+  --theme-info: #{$theme-info};
+
+  // 文本颜色
+  --text-primary: #{$text-primary};
+  --text-regular: #{$text-regular};
+  --text-secondary: #{$text-secondary};
+  --text-placeholder: #{$text-placeholder};
+
+  // 背景颜色
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --bg-tertiary: #{$bg-tertiary};
+
+  // 边框
+  --border-color: #{$border-color};
+  --border-radius: #{$border-radius};
+  --border-width: #{$border-width};
+
+  // 阴影
+  --shadow-color: #{$shadow-color};
+  --shadow-base: #{$shadow-base};
+  --shadow-light: #{$shadow-light};
+  --shadow-heavy: #{$shadow-heavy};
+  --shadow-controls: #{$shadow-controls};
+
+  // 过渡
+  --transition-duration: #{$transition-duration};
+  --transition-timing: #{$transition-timing};
+  --transition-base: #{$transition-base};
+  --transition-colors: #{$transition-colors};
+  --transition-transform: #{$transition-transform};
+
+  // 字体
+  --font-size-mini: #{$font-size-mini};
+  --font-size-small: #{$font-size-small};
+  --font-size-base: #{$font-size-base};
+  --font-size-medium: #{$font-size-medium};
+  --font-size-large: #{$font-size-large};
+  --font-size-xlarge: #{$font-size-xlarge};
+}
+
+// z-index 层级管理
+$z-layers: (
+  mask: 1000,
+  modal: 1100,
+  popup: 1200,
+  tooltip: 1300,
+  loading: 1400,
+  controls: 100,
+  info: 90,
+  selector: 110,
+  list: 110
+) !default;
+
+// 响应式断点
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+// 字体粗细
+$font-weights: (
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
+) !default;
+
+// 行高
+$line-heights: (
+  tight: 1.25,
+  normal: 1.5,
+  relaxed: 1.75
+) !default;
+
+// 间距系统
+$spacers: (
+  0: 0,
+  1: 0.25rem,  // 4px
+  2: 0.5rem,   // 8px
+  3: 1rem,     // 16px
+  4: 1.5rem,   // 24px
+  5: 2rem,     // 32px
+  6: 3rem      // 48px
+) !default;
+
+// 获取 z-index
+@function z($layer) {
+  @return map.get($z-layers, $layer);
+}
+
+// 获取断点值
+@function breakpoint($point) {
+  @return map.get($breakpoints, $point);
+}
+
+// 获取字体大小
+@function font-size($size) {
+  @return map.get($font-sizes, $size);
+}
+
+// 获取字重
+@function font-weight($weight) {
+  @return map.get($font-weights, $weight);
+}
+
+// 获取行高
+@function line-height($height) {
+  @return map.get($line-heights, $height);
+}
+
+// 获取间距
+@function spacing($space) {
+  @return map.get($spacers, $space);
+} 

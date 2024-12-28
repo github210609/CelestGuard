@@ -90,7 +90,10 @@ export default {
     signalGood: 'GPS 信号良好',
     signalFair: 'GPS 信号一般',
     signalPoor: 'GPS 信号较差',
-    signalNone: 'GPS 无信号'
+    signalNone: 'GPS 无信号',
+    locatingTitle: '正在定位',
+    locatingDesc: '正在通过卫星定位系统获取您的位置',
+    locatingTip: '请稍候片刻...'
   },
   login: {
     title: '欢迎回来',

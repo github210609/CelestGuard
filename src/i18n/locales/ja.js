@@ -79,13 +79,21 @@ export default {
     viewLocation: '位置を表示'
   },
   map: {
-    title: '地図エリア',
+    title: 'マップエリア',
     locateMe: '現在地を表示',
     navigate: 'ナビゲート',
-    selectUsers: 'ユーザーを選択',
-    locationSuccess: '位置情報の取得に成功しました',
-    locationFailed: '位置情報の取得に失敗しました。位置情報の権限を確認してください',
-    loadFailed: '地図の読み込みに失敗しました。更新して再試行してください'
+    selectUsers: 'ユーザー選択',
+    locationSuccess: '位置情報を更新しました',
+    locationFailed: '位置情報の取得に失敗しました',
+    loadFailed: 'マップの読み込みに失敗しました',
+    signalExcellent: 'GPS信号：最高',
+    signalGood: 'GPS信号：良好',
+    signalFair: 'GPS信号：普通',
+    signalPoor: 'GPS信号：弱い',
+    signalNone: 'GPS信号：なし',
+    locatingTitle: '位置情報を取得中',
+    locatingDesc: 'GPSで現在地を確認しています',
+    locatingTip: 'しばらくお待ちください...'
   },
   login: {
     title: 'おかえりなさい',

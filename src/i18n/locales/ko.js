@@ -83,9 +83,17 @@ export default {
     locateMe: '내 위치 찾기',
     navigate: '내비게이션',
     selectUsers: '사용자 선택',
-    locationSuccess: '위치 확인 성공',
-    locationFailed: '위치 확인 실패, 위치 권한을 확인해주세요',
-    loadFailed: '지도 로드 실패, 새로고침 후 다시 시도해주세요'
+    locationSuccess: '위치 업데이트 완료',
+    locationFailed: '위치 확인 실패',
+    loadFailed: '지도 로드 실패',
+    signalExcellent: 'GPS 신호 매우 좋음',
+    signalGood: 'GPS 신호 좋음',
+    signalFair: 'GPS 신호 보통',
+    signalPoor: 'GPS 신호 약함',
+    signalNone: 'GPS 신호 없음',
+    locatingTitle: '위치 찾는 중',
+    locatingDesc: 'GPS로 현재 위치를 확인하고 있습니다',
+    locatingTip: '잠시만 기다려주세요...'
   },
   login: {
     title: '돌아오신 것을 환영합니다',

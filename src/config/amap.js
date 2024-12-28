@@ -1,24 +1,20 @@
-// 高德地图配置
-export const amapConfig = {
-  key: import.meta.env.VITE_AMAP_KEY,
-  securityJsCode: import.meta.env.VITE_AMAP_SECURITY_CODE,
-  version: '2.0',
-  plugins: [
-    'AMap.Scale',
-    'AMap.Geolocation',
-    'AMap.Icon'
-  ]
-}
+// 高德地图 Web API 密钥
+const API_KEY = import.meta.env.VITE_AMAP_KEY
 
-// 初始化高德地图安全配置
-export const initAMapSecurityConfig = () => {
+// 安全密钥
+const SECURITY_CODE = import.meta.env.VITE_AMAP_SECURITY_CODE
+
+// 初始化安全配置
+export function initAMapSecurityConfig() {
   window._AMapSecurityConfig = {
-    securityJsCode: amapConfig.securityJsCode
+    securityJsCode: SECURITY_CODE,
+    serviceHost: import.meta.env.VITE_AMAP_SERVICE_HOST || 
+      `https://restapi.amap.com`
   }
 }
 
-// 动态加载高德地图脚本
-export const loadAMapScript = () => {
+// 加载高德地图脚本
+export function loadAMapScript() {
   return new Promise((resolve, reject) => {
     if (window.AMap) {
       resolve(window.AMap)
@@ -28,7 +24,7 @@ export const loadAMapScript = () => {
     const script = document.createElement('script')
     script.type = 'text/javascript'
     script.async = true
-    script.src = `https://webapi.amap.com/maps?v=${amapConfig.version}&key=${amapConfig.key}&plugin=${amapConfig.plugins.join(',')}`
+    script.src = `https://webapi.amap.com/maps?v=2.0&key=${API_KEY}&plugin=AMap.Scale,AMap.Geolocation,AMap.GeometryUtil`
     
     script.onerror = reject
     script.onload = () => {

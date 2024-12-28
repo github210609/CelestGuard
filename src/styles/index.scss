@@ -1,0 +1,7 @@
+// 导入基础变量和混入
+@use "base/variables";
+@use "base/mixins";
+
+// 导出所有变量和混入，使其在其他文件中可用
+@forward "base/variables";
+@forward "base/mixins"; 
